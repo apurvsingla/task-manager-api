@@ -5,7 +5,7 @@ const cors = require("cors");
 const app = express();
 
 var corsOptions = {
-    origin: ["http://localhost:8081", "http://localhost:3000"]
+    origin: ["http://localhost:8081", "http://localhost:3000", "https://subtle-cranachan-7df191.netlify.app"]
 };
   
 app.use(cors(corsOptions));
