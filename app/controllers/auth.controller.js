@@ -8,11 +8,14 @@ var jwt = require("jsonwebtoken");
 var bcrypt = require("bcryptjs");
 
 exports.signup = (req, res) => {
+  console.log("signup---------");
   const user = new User({
     name: req.body.name,
     email: req.body.email,
     password: bcrypt.hashSync(req.body.password, 8)
   });
+
+  console.log(user, "user-------");
 
   user.save((err, user) => {
     if (err) {
@@ -60,13 +63,6 @@ exports.signup = (req, res) => {
         });
       });
     }
-    const task = new Task({
-      list: [],
-      deletedList: [],
-      completedList: [],
-      userId: user._id
-    });
-    task.save();
   });
 };
 
